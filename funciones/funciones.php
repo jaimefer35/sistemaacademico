@@ -65,6 +65,73 @@ function listadotabla($titulo,$datos,$enlaces=0,$modifica="",$elimina="",$ver=""
 	</table>
 	<?php
 }
+
+function listadotablaregistro($titulo,$datos,$enlaces=0,$modifica="",$elimina="",$ver="",$botones="",$adicional="",$target="_self"){
+	global $folder;
+	if(count($datos)==0){
+		echo "No se pudo encontrar los datos solicitados";
+		return false;
+	}
+	?>
+	<table class="tablalistado">
+	<thead>
+	<tr class="cabecera">
+	<td>Nº</td>
+	<?php foreach($titulo as $k=>$v){
+	?>
+	<td><?php echo $v?></td>
+	<?php
+	}?>
+	</tr>
+	</thead>
+	<tbody>
+	<?php
+	$i=0;
+	foreach($datos as $d){$i++;
+	?>
+	<tr class="contenido">
+		<td class="der"><?php echo $i;?></td>
+		<?php foreach($titulo as $k=>$v){
+			?>
+			<td><?php archivo($d[$k]);?></td>
+			<?php
+		}
+		//$ver=0;
+		if($enlaces==1){
+			$id=array_shift($d);
+			if(!empty($d['ver'])){
+			?>
+				<td><a href="<?php echo $ver;?>?id=<?php echo $id;?>" class="boton ver" target="_blank"><img src="<?php echo $folder; ?>imagenes/iconos/ver.jpg" alt="Ver" title="Ver"></a></td>
+			<?php
+			}else{?><td></td><?php }
+			if(!empty($d['modifica'])){
+			?>
+				<td><a href="<?php echo $modifica;?>?id=<?php echo $id;?>" class="boton modificar"><img src="<?php echo $folder; ?>imagenes/iconos/editar.png" alt="Modificar" title="Modificar"></a></td>
+			<?php
+			}else{?><td></td><?php }
+			if(!empty($d['elimina'])){
+			?>
+				<td><a href="<?php echo $elimina;?>?id=<?php echo $id;?>" class="boton eliminar"><img src="<?php echo $folder; ?>imagenes/iconos/cerrar2.jpg" alt="Eliminar" title="Eliminar" width="16" height="16"></a></td>
+			<?php
+			}else{?><td></td><?php }
+			if(!empty($d['botones'])){
+			?>
+				<?php foreach ($d['botones'] as $k => $v): ?>
+				<td><a href="<?php echo $v;?>?<?php if(!empty($adicional)){foreach($adicional as $ak=>$av){ echo $ak."=".$av."&";}}?>id=<?php echo $id;?>" class="boton" target="<?php echo $target?>"><?php echo $k; ?></a></td>	
+				<?php endforeach ?>
+			<?php
+			}
+		}
+		?>
+		
+	</tr>
+	<?php
+	}
+	?>
+	</tbody>
+	</table>
+	<?php
+}
 function archivo($nombrearchivo){
 	global $directorio,$folder;
 	$datos=tipoarchivo($nombrearchivo);
