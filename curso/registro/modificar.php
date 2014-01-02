@@ -4,8 +4,8 @@ $folder="../../";
 $titulo="Modificar Curso";
 $id=$_GET['id'];
 include_once '../../class/curso.php';
-$serviciotecnico=new serviciotecnico;
-$sertec=array_shift($serviciotecnico->mostrar($id));
+$curso=new curso;
+$cur=array_shift($curso->mostrar($id));
 
 $garantia=array(1=>"Si",0=>"No");
 
@@ -31,48 +31,13 @@ $(document).ready(function(e) {
                 <form action="actualizar.php" method="post" enctype="multipart/form-data">
                 <?php campos("","id","hidden",$id);?>
 				<table class="tablareg">
-                	<tr>
-						<td><?php campos("Solucionado","estado","select",$garantia,0,"",$sertec['estado']);?></td>
+                    <tr>
+						<td><?php campos("Nombre de Curso","nombre","text",$cur['nombre'],0,array("size"=>"40"));?></td>
 					</tr>
                     <tr>
-						<td><?php campos("Garantía","estadogarantia","select",$garantia,0,"",$sertec['estadogarantia']);?></td>
+						<td><?php campos("Abreviado","abreviado","text",$cur['abreviado'],0,array("size"=>"40"));?></td>
 					</tr>
-                    <tr>
-						<td><?php campos("Producto","codproducto","select",$prod,0,"",$sertec['codproducto']);?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Nº Serie","nserie","text",$sertec['nserie'],1,array("required"=>"required","size"=>50));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Indicación Cliente","indicacioncliente","textarea",$sertec['indicacioncliente'],0,array("cols"=>40,"rows"=>5));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Accesorios","accesorios","textarea",$sertec['accesorios'],0,array("cols"=>40,"rows"=>5));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Centro","centro","text",$sertec['centro'],0,array("size"=>"40"));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Nombre","nombre","text",$sertec['nombre'],0,array("size"=>"40"));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("C.I.","ci","text",$sertec['ci'],0,array("size"=>"40"));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Teléfono","telefono","text",$sertec['telefono'],0,array("size"=>"40"));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Total","total","number",$sertec['total'],0,array("size"=>"40","min"=>0));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("A Cuenta","acuenta","number",$sertec['acuenta'],0,array("size"=>"40","min"=>0));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Saldo","saldo","number",$sertec['saldo'],0,array("size"=>"40","readonly"=>"readonly"));?></td>
-					</tr>
-                    <tr>
-						<td><?php campos("Fecha Entrega","fechaentrega","date",$sertec['fechaentrega'],0,array("size"=>"40"));?></td>
-					</tr>
+                  
 					<tr><td><?php campos("Guardar","guardar","submit");?></td></tr>
 				</table>
                 </form>

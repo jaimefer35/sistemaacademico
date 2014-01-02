@@ -2,26 +2,13 @@
 include_once("../../login/check.php");
 if(!empty($_POST)):
 include_once("../../class/curso.php");
-$serviciotecnico=new serviciotecnico;
+$curso=new curso;
 extract($_POST);
 //empieza la copia de archivos
-$valores=array(	"estado"=>"'$estado'",
-				"estadogarantia"=>"'$estadogarantia'",
-				"codproducto"=>"'$codproducto'",
-				"nserie"=>"'$nserie'",
-				"indicacioncliente"=>"'$indicacioncliente'",
-				"accesorios"=>"'$accesorios'",
-				"centro"=>"'$centro'",
-				"nombre"=>"'$nombre'",
-				"ci"=>"'$ci'",
-				"telefono"=>"'$telefono'",
-				"acuenta"=>"'$acuenta'",
-				"saldo"=>"'$saldo'",
-				"total"=>"'$total'",
-				"fechaentrega"=>"'$fechaentrega'",
-				
+$valores=array(	"nombre"=>"'$nombre'",
+				"abreviado"=>"'$abreviado'",
 				);
-				$serviciotecnico->actualizar($valores,$id);
+				$curso->actualizar($valores,$id);
 				$mensaje[]="SUS DATOS SE GUARDARON CORRECTAMENTE";
 
 
