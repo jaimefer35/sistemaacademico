@@ -33,7 +33,7 @@ php_start(0);
 			$this->CuadroCabecera(12 ,"Fecha: ",20,$fecha);
 			$this->SetXY(157,32);
 			$this->Pagina();
-			$this->ln(11);
+			$this->ln(16);
 			if(in_array("Cabecera",get_class_methods($this))){
 				$this->Cabecera();	
 			}
