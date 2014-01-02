@@ -4,9 +4,6 @@ $folder="../../";
 $titulo="Registro de Nuevo Curso";
 
 $garantia=array(1=>"Si",0=>"No");
-include_once("../../class/producto.php");
-$producto=new producto;
-$prod=todolista($producto->mostrarTodo(),"codproducto","nombre,descripcion"," - ");
 
 include_once '../../funciones/funciones.php';
 include_once '../../cabecerahtml.php';

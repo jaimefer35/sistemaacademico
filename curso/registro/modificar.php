@@ -1,16 +1,13 @@
 <?php
 include_once '../../login/check.php';
 $folder="../../";
-$titulo="Modificar Servicio Técnico";
+$titulo="Modificar Curso";
 $id=$_GET['id'];
 include_once '../../class/curso.php';
 $serviciotecnico=new serviciotecnico;
 $sertec=array_shift($serviciotecnico->mostrar($id));
 
 $garantia=array(1=>"Si",0=>"No");
-include_once("../../class/producto.php");
-$producto=new producto;
-$prod=todolista($producto->mostrarTodo(),"codproducto","nombre,descripcion"," - ");
 
 include_once '../../funciones/funciones.php';
 include_once '../../cabecerahtml.php';
