@@ -22,7 +22,7 @@ $pdf->Ln();
 $pdf->CuadroCuerpoPersonalizado(35,"Nombre de Curso:",0,"",0,"B");
 $pdf->CuadroCuerpoPersonalizado(120,$cur['nombre'],0,"",0,"");
 $pdf->Ln();
-$pdf->CuadroCuerpoPersonalizado(35,"Teléfono:",0,"",0,"B");
+$pdf->CuadroCuerpoPersonalizado(35,"Abreviado:",0,"",0,"B");
 $pdf->CuadroCuerpoPersonalizado(50,$cur['abreviado'],0,"",0,"");
 $pdf->Ln();
 /*$foto="../foto/".$emp['foto'];

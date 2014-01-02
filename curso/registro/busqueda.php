@@ -5,7 +5,7 @@ if (!empty($_POST)) {
 	include_once '../../class/curso.php';
 	extract($_POST);
 	$curso=new curso;
-	$cur=$curso->mostrarTodo("nombre LIKE '%$nombre%' and abreviado LIKE '%$abreviado%'");
+	$cur=$curso->mostrarTodo("nombre LIKE '%$nombre%' and abreviado LIKE '%$abreviado%'","nombre");
 	foreach($cur as $c){$i++;
 		$datos[$i]['codcurso']=$c['codcurso'];
 		$datos[$i]['nombre']=$c['nombre'];
