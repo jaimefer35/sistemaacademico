@@ -12,9 +12,10 @@ include_once "../cabecerahtml.php";
             <form id="busqueda" action="busqueda.php" method="post" >
                 <table class="tablabus">
                     <tr>
-                        <td><?php campos("Nombre","nombre","text","",1,array("size"=>30));?></td>
-						<td><?php campos("Apellido Paterno","paterno","text","",0,array("size"=>30));?></td>
-                        <td><?php campos("Apellido Materno","materno","text","",0,array("size"=>30));?></td>
+                        <td><?php campos("Nombre","nombre","text","",1,array("size"=>20));?></td>
+						<td><?php campos("Apellido Paterno","paterno","text","",0,array("size"=>20));?></td>
+                        <td><?php campos("Apellido Materno","materno","text","",0,array("size"=>20));?></td>
+                        <td><?php campos("Nivel","nivel","select",array("2"=>"Dirección","3"=>"Profesor","4"=>"Regente"));?></td>
                         <td><?php campos("Buscar","enviar","submit","",0,array("size"=>15));?></td>
                     </tr>
                 </table>
