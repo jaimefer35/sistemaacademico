@@ -34,3 +34,8 @@ $(document).ready(function(e) {
 	$("select").css({'width':'100%'}).not(".nolista").select2({'placeholder':'Búsqueda no encontrada','loadMorePadding':0});	
 });
 </script>
+<style type="text/css" media="print">
+.noimprimir{
+	display:none;	
+}
+</style>
