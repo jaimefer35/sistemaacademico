@@ -114,6 +114,11 @@ class bd{
 		mysql_query ("DELETE FROM {$this->tabla} $where");
 //		return $this->validateOperation ();
 	}
+	function vaciar(){
+		//$where =$where_str ? "WHERE $where_str" : "";
+		mysql_query ("TRUNCATE TABLE {$this->tabla} $where");
+//		return $this->validateOperation ();
+	}
 	function updateRow($dataValues,$where_str){
 		$where =$where_str ? "WHERE $where_str" : "";
 		$data=array();

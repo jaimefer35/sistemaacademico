@@ -51,11 +51,11 @@ php_start(0);
 			$this->SetFillColor(234,234,234);
 			$this->SetFont("Arial",$tipo,$tam);	
 		}
-		function CuadroCabecera($txt1Ancho,$txt1,$txt2Ancho,$txt2){
+		function CuadroCabecera($txt1Ancho,$txt1,$txt2Ancho,$txt2,$borde=0){
 			$this->Fuente("B");
-			$this->Cell($txt1Ancho,4,utf8_decode($txt1),0,0,"L");
+			$this->Cell($txt1Ancho,4,utf8_decode($txt1),$borde,0,"L");
 			$this->Fuente("");
-			$this->Cell($txt2Ancho,4,utf8_decode($txt2),0,0,"L");
+			$this->Cell($txt2Ancho,4,utf8_decode($txt2),$borde,0,"L");
 		}
 		function TituloCabecera($txtAncho,$txt,$tam=10,$borde=1,$align="C"){
 			$this->Fuente("B",$tam);
